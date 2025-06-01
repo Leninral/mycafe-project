@@ -1,17 +1,16 @@
 const siteModel = [
-    { type: 'banner', src: 'assets/banner2.webp' },
+    { type: 'banner', src: 'assets/banner2.webp', className: 'banner'},
     { type: 'section', title: 'Добро пожаловать', content: 'Лучшее кафе в городе!' },
-];
-
-
-function createImage(source) {
+  ];
+  
+  function createImage(source, className = 'img'){
     const img = document.createElement('img');
     img.src = source;
+    img.className = className;
     return img;
-}
-
-
-function createSection(title, content) {
+  }
+  
+  function createSection(title, content) {
     const section = document.createElement('section');
     const h2 = document.createElement('h2');
     h2.textContent = title;
@@ -20,24 +19,26 @@ function createSection(title, content) {
     section.appendChild(h2);
     section.appendChild(p);
     return section;
-}
-
-function renderSite(model, container) {
-    container.innerHTML = ''; // очищаем контейнер
+  }
+  
+  function renderSite(model, container) {
+    container.innerHTML = '';
     model.forEach(block => {
-        let element;
-        switch (block.type) {
-            case 'section':
-                element = createSection(block.title, block.content);
-                break;
-            case 'banner':
-                element = createImage(block.src);
-            default:
-                element = document.createElement('div');
-                element.textContent = 'Неизвестный блок';
-        }
-        container.appendChild(element);
+      let element;
+      switch(block.type) {
+        case 'banner':
+          element = createImage(block.src, block.className);
+          break;
+        case 'section':
+          element = createSection(block.title, block.content);
+          break;
+        default:
+          element = document.createElement('div');
+          element.textContent = 'Неизвестный блок';
+      }
+      container.appendChild(element);
     });
-}
-
-renderSite(siteModel, document.getElementById('site'));
+  }
+  
+  renderSite(siteModel, document.getElementById('site'));
+  
