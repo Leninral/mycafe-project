@@ -1,0 +1,116 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+
+  }
+
+  body {
+    background-color: #ffffff;
+    margin: 0;
+  }
+  
+  a {
+    text-decoration: none;
+    color: #333;
+    transition: 1s ease;
+  }
+
+  a:hover {
+    color: #f90000;
+  }
+
+
+
+  .menu {
+    position:sticky;
+    top: 0;
+    width: 100%;
+    background-color: #fff;
+    font-family:'Courier New', Courier, monospace;
+    text-align: center;
+    z-index: 1000;
+
+
+  }
+
+  
+  .logo {
+    font-size: 40px;
+    font-weight: bold;
+    color: #333;
+
+  }
+
+  .logo a{
+    transition: 1s ease;
+  }
+  .logo a:hover {
+    color: #5a2d0c;
+  }
+
+  .nav {
+    display: flex;
+    position: relative;
+    justify-content: center;
+  }
+  
+  /* Стилизация каждой ссылки как блока */
+  .nav-link {
+    padding: 20px 20px;
+    text-decoration: none;
+    color: #333;
+    transition: 1s ease;
+  }
+  
+  /* Выделение при наведении — целиком */
+  .nav-link:hover {
+    color: #5a2d0c;
+    text-decoration: underline;
+  }
+  
+  .banner {
+    width: 100%;
+    overflow: hidden;
+  }
+  
+  .banner img {
+    width: 100%;
+    height: auto;         /* сохраняет пропорции */
+    display: block;       /* убирает нижний отступ картинки */
+    object-fit: cover;    /* растягивает красиво при необходимости */
+  }
+    
+
+  .footer {
+    background-color: hsl(0, 0%, 0%);
+    padding: 40px 20px;
+    text-align: center;
+    margin-top: 100px;
+  }
+  
+  .footer-content {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  
+  .footer p {
+    font-size: 18px;
+    margin-bottom: 20px;
+    color: #333;
+  }
+  
+  .social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+  }
+  
+  .social-icons a svg {
+    transition: fill 0.3s ease;
+  }
+  
+  .social-icons a:hover svg {
+    fill: #8B4513; /* кофейный цвет при наведении */
+  }
+  
